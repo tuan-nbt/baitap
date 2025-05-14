@@ -1,0 +1,16 @@
+<!-- view.html -->
+<h2>Thông Tin Sách</h2>
+<div id="book-info"></div>
+
+<script>
+    const book = JSON.parse(localStorage.getItem("book"));
+    if (book) {
+        $("#book-info").html(`
+            <p>Tên sách: ${book.name}</p>
+            <p>Số lượng: ${book.quantity}</p>
+            <p>Giá bán: ${book.price} VNĐ</p>
+        `);
+    } else {
+        $("#book-info").html("<p>Không có thông tin sách nào được lưu.</p>");
+    }
+</script>

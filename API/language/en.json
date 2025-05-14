@@ -1,0 +1,17 @@
+{
+    "driver_registration": "Driver Registration",
+    "driver_registration_description": "Please fill out the form below to register as a driver.",
+    "name_required": "Name is required.",
+    "invalid_email": "Invalid email address.",
+    "invalid_phone": "Invalid phone number.",
+    "vehicle_type_required": "Vehicle type is required.",
+    "license_plate_required": "License plate is required.",
+    "address_required": "Address is required.",
+    "dob_required": "Date of birth is required (format: mm/dd/yyyy).",
+    "invalid_experience": "Experience must be a non-negative number.",
+    "driver_registered": "Driver successfully registered!",
+    "error": "An error occurred",
+    "address": "Address",
+    "dob": "Date of Birth",
+    "experience": "Experience"
+}

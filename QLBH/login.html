@@ -1,0 +1,49 @@
+<!-- login.html -->
+<h2>Đăng Nhập</h2>
+<form id="login-form">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <br>
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" required>
+    <br>
+    <button type="submit">Đăng nhập</button>
+</form>
+
+
+<!-- Form hiển thị chi tiết -->
+<div id="user-details" style="display: none;">
+    <h3>Thông tin người dùng</h3>
+    <p>Email: <span id="user-email"></span></p>
+    <p>Quyền: <span id="user-role"></span></p>
+</div>
+
+<script>
+    $("#login-form").submit(function (e) {
+        e.preventDefault();
+        const email = $("#email").val();
+        const password = $("#password").val();
+
+        // Danh sách tài khoản mẫu
+        const users = [
+            { email: "a@gmail.com", password: "admin123", role: "admin" },
+            { email: "b@gmail.com", password: "user123", role: "user" },
+        ];
+
+        // Xác thực tài khoản
+        const user = users.find(u => u.email === email && u.password === password);
+
+        if (user) {
+            alert(`Đăng nhập thành công với quyền: ${user.role}`);
+            // Điều hướng theo quyền
+            $("#content").load(user.role === "admin" ? "admin.html" : "user.html");
+
+            // Hiển thị thông tin người dùng
+            $("#user-email").text(user.email);
+            $("#user-role").text(user.role);
+            $("#user-details").fadeIn(); // Hiệu ứng hiển thị
+        } else {
+            alert("Email hoặc mật khẩu không đúng. Vui lòng thử lại!");
+        }
+    });
+</script>

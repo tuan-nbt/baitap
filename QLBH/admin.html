@@ -1,0 +1,10 @@
+<!-- admin.html -->
+<h2>Chào mừng Quản trị viên</h2>
+<p>Đây là trang dành cho admin.</p>
+<a href="#" id="add-book-link">Nhập Sách</a>
+
+<script>
+    $("#add-book-link").click(function () {
+        $("#content").load("add-book.html");
+    });
+</script>
